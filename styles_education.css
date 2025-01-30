@@ -1,0 +1,47 @@
+body {
+    background-color: steelblue;
+}
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: white;
+}
+h1:hover {
+    color: black;
+}
+.small_quote {
+    color: white;
+    text-align: center;
+    padding-left: 15em;
+    padding-right: 15em;
+}
+.source {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+ol {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*
+    text-align: center;
+    */
+    display: table;
+    list-style-position: inside;
+    margin-left: 30%;
+}
+img {
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+}
+.big_quote {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 2em;
+    padding-left: 14em;
+    padding-right: 14em;
+}
+.end {
+    text-align: center;
+}
