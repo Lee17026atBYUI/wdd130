@@ -41,6 +41,11 @@ img {
   display: block;
   margin: 0 auto;
 }
+.site-plan-image {
+  width: 300px;
+  height: auto;
+  padding: 15px;
+}
 .logo-image {
   width: 200px;
   height: auto;
