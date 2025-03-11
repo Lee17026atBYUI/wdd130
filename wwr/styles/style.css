@@ -237,6 +237,8 @@ h4 {
     padding-bottom: 0.5em;
 }
 
+/* Contact Us */
+
 @media screen and (max-width: 900px) {
     #hero, .home-grid {
         display: block;
