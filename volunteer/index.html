@@ -5,9 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer | Home</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script>
+        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-100px";
+        }
+        prevScrollpos = currentScrollPos;
+        } 
+    </script>
 </head>
 <body>
-    <header>
+    <header id="navbar">
         <a href="index.html" class="logo_link">
             <img class="logo" src="images/logo.png" alt="Volunteer Logo">
         </a>

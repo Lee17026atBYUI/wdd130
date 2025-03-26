@@ -28,6 +28,11 @@ header {
     display: grid;
     grid-template-columns: 100px auto;
     background-color: #ccfbfe;
+    position: fixed; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+    z-index: 1;
 }
 .logo_link {
     padding-top: 5px;
