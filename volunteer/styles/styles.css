@@ -19,7 +19,7 @@ body {
 h1, h2, h3, h4, h5 {
     font-family: "Playfair Display", serif;
 }
-p, a {
+p, a, li {
     font-family: "Josefina Sans", Helvetica, sans-serif;
 }
 
@@ -146,3 +146,72 @@ footer .social img {
     width: 40px;
     height: auto;
 }
+
+/* Just Me */
+.sub_page {
+    padding-top: 100px;
+}
+.sub_header {
+    text-align: center;
+}
+.uno_section {
+    background-color: var(--accent2-color);
+    margin: 20px 80px 30px 80px;
+    padding: 25px 20px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    box-shadow: 5px 5px 10px #483647;
+}
+.left_image {
+    grid-column: 1 / 2;
+}
+.right_text {
+    grid-column: 2 / 3;
+}
+.uno_section img {
+    display: block;
+    width: 40vw;
+    height: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px #483647;
+}
+.right_text h2 {
+    margin-top: 0;
+    color: #441816;
+}
+.right_text p {
+    margin-top: -5px;
+    padding: 0;
+    font-size: 0.9em;
+    line-height: 1.2em;
+}
+.right_text ul {
+    list-style-type: circle;
+    padding-right: 20px;
+}
+.right_text li {
+    font-size: 0.85em;
+    padding-bottom: 3px;
+}
+.right_text a {
+    display: block;
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    color: #574759;
+    font-size: 1.2em;
+    padding: 0.5em;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 15%;
+    margin-bottom: 5px;
+    box-shadow: 5px 5px 10px #483647;
+}
+.right_text a:hover {
+    background-color: #483647;
+    color: #ebded9;
+}
+
+/* With My Friends */
