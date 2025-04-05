@@ -215,3 +215,38 @@ footer .social img {
 }
 
 /* With My Friends */
+.group_grid {
+    display: grid;
+    grid-template-columns: 25px 1fr 25px 1fr 25px;
+}
+.group_grid section {
+    background-color: var(--accent1-color);
+    box-shadow: 5px 5px 10px #483647;
+    padding-bottom: 20px;
+    border-radius: 2px;
+}
+.group_text {
+
+}
+.group_text h2 {
+    text-align: center;
+    margin-top: 15px;
+    color: #441816;
+}
+.group_text p {
+    padding: 0.5em 2em 0.5em 2em;
+}
+.group_grid .right_text {
+    line-height: 1.1em;
+    margin: 20px 40px 10px 40px;
+}
+.group_grid img {
+    display: block;
+    width: 40vw;
+    height: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px #483647;
+}
