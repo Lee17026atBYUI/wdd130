@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD430 W08 Drag and Drop</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 740px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <h1>Install the NGX Drag and Drop Module</h1>
+  <p>Angular components and modules can be installed using the Node Package Manager (npm) utility. We will use the ngx-drag-drop module to implement the drag-and-drop functionality needed in our application. This module is implemented by a third-party. View the documentation for this component by selecting the link below.</p>
+  <a href="https://github.com/reppners/ngx-drag-drop" target="_blank">NGX Drag and Drop Documentation</a>
+  <p>Follow the instructions below to install the ngx-drag-drop module:</p>
+  <ol>
+    <li>
+      Open the terminal in the VS Code. Enter the following npm command to download and install the ngx-drag-drop module into your application. Ignore any warnings that are reported:
+      <p>
+        npm install ngx-drag-drop --save
+      </p>
+    </li>
+    <li>
+      Open the app.module.ts file and add an import statement to tell your app where the ngx-drag-drop module is installed. Then add the DndModule to the array assigned to the imports property as shown below:
+    </li>
+  </ol>
+  <img src="wdd430w08_images/Screenshot 2025-10-29 at 3.09.22 PM.png" alt="">
+  <img src="wdd430w08_images/Screenshot 2025-10-29 at 3.11.56 PM.png" alt="">
+  <h1>Add the Drag and Drop Directives</h1>
+  <p>We need to tell Angular where the items can be dragged to in our application; this is referred to as the drop zone. Then, we need to define which items are draggable. This is accomplished by adding the DndModule directives to each HTML element that is draggable, and to the HTML container (&lt;div&gt;) that will act as the drop zone for where the items can be dragged. In the CMS application, the end user should be able to drag contacts from the ContactListComponent into the group list in the ContactEditComponent to add a contact to the group.</p>
+  <p>Follow the instructions below to define the drop zone in the ContactEditComponent and to specify that each contact in the contact list in the ContactListComponent is draggable:</p>
+  <ol>
+    <li>
+      The drop zone will be defined inside the groupList &lt;div&gt; in the ContactEditComponent. Open the contact-edit.component.html file and locate this &lt;div&gt;. Add the following DndModule directives to this &lt;div&gt;:
+      <ol type="a">
+        <li>
+          Add the dndDropzone directive to indicate that this element will receive draggable items as shown below.
+        </li>
+        <li>
+          Add the (dndDrop) directive to specify the method that will be called when a contact is dragged into this drop zone. (The original instructions named the method addToGroup()).
+        </li>
+        <img src="wdd430w08_images/Screenshot 2025-10-29 at 3.34.35 PM.png" alt="">
+      </ol>
+    </li>
+    <li>
+      All of the &lt;cms-contact-item&gt; elements in the ContactListComponent need to be identified as draggable. Open the contact-list.component.html file. Add the following directives to the &lt;cms-contact-item&gt; tag:
+      <ol type="a">
+        <li>
+          Add the [dndDraggable] directive to indicate that this element is draggable and to indicate what data is to be associated with the element when it is dragged as shown below.
+        </li>
+        <img src="wdd430w08_images/Screenshot 2025-10-29 at 3.46.53 PM.png" alt="">
+      </ol>
+    </li>
+  </ol>
+  <h1>Add Methods to Add and Delete Contacts in the Group</h1>
+  <p>No change. Please see original instructions.</p>
+  <h1>Implement the Method to See if Contact is Already in the Group</h1>
+  <p>No change. Please see original instructions.</p>
+  <h1>Implement the Method to Add a New Contact to the Group</h1>
+  <p>Create a new method to add a contact to the contact’s group. You need to understand how the drag-and-drop operation works before we implement this method.</p>
+  <p>When the end user drags a &lt;cms-contact-item&gt; component in the ContactListComponent component into the drop zone defined in the ContactEditComponent, the selected contact in the ContactItemComponent is assigned to the drag event. This is done by assigning the value of the contact property in the ContactItemComponent to the [dndDraggable] directive in the &lt;cms-contact-item&gt; tag in the HTML of the ContactListComponent as shown below: (it's the same image)</p>
+  <img src="wdd430w08_images/Screenshot 2025-10-29 at 3.46.53 PM.png" alt="">
+  <p>The drop zone is defined in the &lt;div&gt; tag in the ContactEditComponent as shown below. (It's the same image again.)</p>
+  <img src="wdd430w08_images/Screenshot 2025-10-29 at 3.34.35 PM.png" alt="">
+  <p>When a &lt;cms-contact-item&gt; tag is dragged and dropped into this drop zone, the dndDrop event is fired and the addToGroup() method (I called it onDrop()) is called and passed the $event. The $event argument contains a reference to the dndDrop event that contains the drag data passed with the element dragged into the drop zone.</p>
+  <p>Implement the addToGroup() method (or whatever you name it, the original instructions had it as one method) in the contact-edit.component.ts file shown below:</p>
+  <img src="wdd430w08_images/Screenshot 2025-10-29 at 4.02.57 PM.png" alt="">
+  <p>This method first gets the drag data from $event passed into the method, and assigns it to wherever. The isInvalidContact() method is then called to determine if the newContact is already in the group. If the contact is already in the group, the method exits. When the newContact is not in the group, the newContact is added to the groupContacts array.</p>
+  <h3>End of Changes</h3>
+  <p>No more changes related to the different Drag and Drop Module. Please refer back to the original document for the remainder of the assignment instructions. Although there's an image about showing an error message when the contact is already in the group, but I don't recall seeing any instructions about it. I think we just implement it on our own.</p>
+</body>
+</html>
